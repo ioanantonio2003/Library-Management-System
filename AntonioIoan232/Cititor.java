@@ -1,7 +1,7 @@
 public class Cititor extends Persoana {
-    private int id_citior;
+    private String id_citior;
 
-    public Cititor(String nume, String prenume, int data_nasterii, int id_citior) {
+    public Cititor(String nume, String prenume, int data_nasterii, String id_citior) {
         super(nume, prenume, data_nasterii);
         this.id_citior = id_citior;
     }
