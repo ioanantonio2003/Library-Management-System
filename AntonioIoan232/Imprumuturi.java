@@ -13,7 +13,11 @@ public class Imprumuturi {
         stare = true;
     }
 
-    public void setStare(Boolean stare) {
+    public int getCod_imprumut() {
+        return cod_imprumut;
+    }
+
+    public void setStare() {
         this.stare = false;
     }
 
@@ -31,5 +35,9 @@ public class Imprumuturi {
                 "carte=" + carte.getTitlu() +
                 ", cod_imprumut=" + cod_imprumut +
                 '}';
+    }
+
+    public Carte getCarte() {
+        return carte;
     }
 }

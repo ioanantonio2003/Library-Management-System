@@ -123,4 +123,33 @@ public class ServiciuBiblioteca {
             }
         }
     }
+
+    public void returnare(int id){
+        for(Imprumuturi i : imprumuturi){
+            if(i.getCod_imprumut() == id){
+                i.setStare();
+                i.getCarte().copii(1);
+            }
+        }
+        System.out.println("Carte returnata cu succes!");
+    }
+
+    public void imprumut(String id, String c){
+        for(Persoana persoana : persoane){
+            if(persoana instanceof Cititor){
+                if(((Cititor) persoana).getId_citior().equals(id)){
+                    for(Carte car : carti){
+                        if(car.getTitlu().equals(c)){
+                            if(car.getNr_copii() > 0){
+                                imprumuturi.add(new Imprumuturi(car, (Cititor) persoana));
+                                System.out.println("Imprumut cu succes!");
+                                return;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        System.out.println("Eroare!");
+    }
 }

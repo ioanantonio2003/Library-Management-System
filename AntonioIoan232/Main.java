@@ -4,9 +4,9 @@ public class Main {
     public static void main(String[] args) {
         //meniul interactiv al aplicatiei
         ServiciuBiblioteca serviciuBiblioteca = new ServiciuBiblioteca();
-        String actiuni = "1.Adauga o sectiune pentru carti in biblioteca\n" +
+        String actiuni = "0.Inchidere aplicatie\n" + "1.Adauga o sectiune pentru carti in biblioteca\n" +
                 "2.Adauga o carte in biblioteca\n" +
-                "3.Adauga o persoana in biblioteca" +
+                "3.Adauga o persoana in biblioteca\n" +
                 "4.Fa un imprumut (pt cineva)\n" +
                 "5.Afiseaza toate cartile dintr-o sectiune specificata\n" +
                 "6.Returneaza o carte de catre cititor\n" +
@@ -90,7 +90,11 @@ public class Main {
                     }
                     break;
                 case 4:
-
+                    System.out.println("Id cititor:");
+                    String id_citi = scanner.nextLine();
+                    System.out.println("Nume Carte:");
+                    String nume_cart = scanner.nextLine();
+                    serviciuBiblioteca.imprumut(id_citi,nume_cart);
                     break;
                 case 5:
                     serviciuBiblioteca.afiseaza_sectiuni();
@@ -101,9 +105,14 @@ public class Main {
                     serviciuBiblioteca.afiseaza_carti_din_sectiune(alegere);
                     break;
                 case 6:
-
+                    System.out.println("Id imprumut : ");
+                    int id_i;
+                    id_i = scanner.nextInt();
+                    scanner.nextLine();
+                    serviciuBiblioteca.returnare(id_i);
                     break;
                 case 7:
+                    System.out.println("Nume carte:");
                     String nume_carte;
                     nume_carte = scanner.nextLine();
                     serviciuBiblioteca.valabilitate_carte(nume_carte);
@@ -112,7 +121,7 @@ public class Main {
                     System.out.println("Id cititor: ");
                     String id_cit;
                     id_cit = scanner.nextLine();
-
+                    serviciuBiblioteca.active(id_cit);
                     break;
                 case 9:
                     serviciuBiblioteca.afisare_persoane();
@@ -125,7 +134,5 @@ public class Main {
                     break;
             }
         }
-
-
     }
 }

@@ -28,4 +28,7 @@ public  class Carte {
     public String getTitlu() {
         return titlu;
     }
+    public void copii(int i){
+        nr_copii = nr_copii + i;
+    }
 }
