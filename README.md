@@ -9,7 +9,7 @@ Proiectul va avea clasa `ServiciuBiblioteca` care va putea:
 - ➕ Adauga o **persoana** in program (persoana poate fi de 3 tipuri: **Autor**, **Angajat**, **Cititor**)  
 - 📖 Face un **imprumut** (fiecare carte are un numar limitat de exemplare in biblioteca) pentru un cititor  
 - 📚 Afisa **toate cartile dintr-o sectiune** specificata  
-- 📊 Afisa **raportul sectiunilor** (numarul de carti si imprumuturile)  
+- 📊 Afisa **toate persoanele** din biblioteca
 - ✅ Verifica **valabilitatea unei anumite carti** (cartea trebuie sa existe)  
 - 🔍 Verifica **imprumuturile active** ale unui cititor  
 - 🔁 **Returna o carte** de catre un cititor  
