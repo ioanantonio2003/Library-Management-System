@@ -9,4 +9,11 @@ public class Sectiune {
         this.nume_sectiune = nume_sectiune;
         carti = new ArrayList<>();
     }
+
+    public String getNume_sectiune() {
+        return nume_sectiune;
+    }
+    public void adauga_c(Carte carte){
+        carti.add(carte);
+    }
 }

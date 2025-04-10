@@ -30,9 +30,32 @@ public class Main {
                     bool = false;
                     break;
                 case 1:
-
+                    String nume_sectiune;
+                    System.out.println("Nume sectiune : ");
+                    nume_sectiune = scanner.nextLine();
+                    serviciuBiblioteca.adauga_Sectiune(nume_sectiune);
                     break;
                 case 2:
+                    String titlu;
+                    int an, copii;
+                    System.out.println("Titlu carte: ");
+                    titlu = scanner.nextLine();
+                    System.out.println("An publicatie : ");
+                    an = scanner.nextInt();
+                    scanner.nextLine();
+                    System.out.println("Numar copii: ");
+                    copii = scanner.nextInt();
+                    scanner.nextLine();
+                    System.out.println("Autori : ");
+                    serviciuBiblioteca.afiseaza_autori();
+                    int al;
+                    al = scanner.nextInt();
+                    scanner.nextLine();
+                    System.out.println("Sectiuni : ");
+                    serviciuBiblioteca.afiseaza_sectiuni();
+                    String sect;
+                    sect = scanner.nextLine();
+                    serviciuBiblioteca.adauga_Carte(titlu,an,copii,al,sect);
                     break;
                 case 3:
                     String nume, prenume;
