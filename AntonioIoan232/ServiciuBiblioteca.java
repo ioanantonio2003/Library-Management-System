@@ -49,8 +49,10 @@ public class ServiciuBiblioteca {
     }
 
     public void afiseaza_sectiuni(){
+        int i = 0;
         for(Sectiune s : sectii){
-            System.out.println("->" + s.getNume_sectiune());
+            System.out.println(Integer.toString(i) +". " +  s.getNume_sectiune());
+            i++;
         }
     }
 
@@ -73,5 +75,52 @@ public class ServiciuBiblioteca {
             }
         }
         System.out.println("Carte adaugata cu succes!");
+    }
+
+    public void afisare_persoane(){
+        for(Persoana p : persoane){
+            p.afisare_detalii();
+        }
+    }
+
+    public void gasire_persoana(String np){
+        for(Persoana p : persoane){
+            if(p.getNume().equals(np)){
+                p.afisare_detalii();
+                return;
+            }
+        }
+        System.out.println("Nu exista aceasta persoana ");
+    }
+
+    public void afiseaza_carti_din_sectiune(int s){
+        List<Sectiune> sectii2 = new ArrayList<>(sectii);
+        if(s < sectii2.size()){
+            sectii2.get(s).afiseaza_carti();
+        }
+    }
+
+    public void valabilitate_carte(String c){
+        for(Carte carte : carti){
+            if(carte.getTitlu().equals(c)){
+                System.out.println("Exemplare disponibile : " + Integer.toString(carte.getNr_copii()));
+                return;
+            }
+        }
+        System.out.println("Nu exista cartea !");
+    }
+
+    public void active(String id){
+        for(Persoana p : persoane){
+            if(p instanceof Cititor){
+                if(((Cititor) p).getId_citior().equals(id)){
+                    for(Imprumuturi i : imprumuturi){
+                        if(i.getCititor().getId_citior().equals(id) && i.getStare()){
+                            System.out.println("->"+i.toString());
+                        }
+                    }
+                }
+            }
+        }
     }
 }

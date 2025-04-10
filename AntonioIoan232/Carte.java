@@ -11,4 +11,21 @@ public  class Carte {
         this.nr_copii = nr_copii;
     }
 
+    @Override
+    public String toString() {
+        return "Carte{" +
+                "autor=" + autor +
+                ", titlu='" + titlu + '\'' +
+                ", an_publicatie=" + an_publicatie +
+                ", nr_copii=" + nr_copii +
+                '}';
+    }
+
+    public int getNr_copii() {
+        return nr_copii;
+    }
+
+    public String getTitlu() {
+        return titlu;
+    }
 }

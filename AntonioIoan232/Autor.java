@@ -10,4 +10,11 @@ public class Autor extends Persoana{
     public void afisare_detalii() {
         System.out.println("Autorul : " + this.getNume() + " nascut in anul : " + Integer.toString(this.getData_nasterii()) + " care este " + tip_autor);
     }
+
+    @Override
+    public String toString() {
+        return "Autor{" +
+                "tip_autor='" + tip_autor + '\'' +
+                '}';
+    }
 }

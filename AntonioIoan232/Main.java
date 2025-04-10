@@ -9,10 +9,10 @@ public class Main {
                 "3.Adauga o persoana in biblioteca" +
                 "4.Fa un imprumut (pt cineva)\n" +
                 "5.Afiseaza toate cartile dintr-o sectiune specificata\n" +
-                "6.Afiseaza raportul sectiunilor (numarul de carti si imprumuturile)\n" +
+                "6.Returneaza o carte de catre cititor\n" +
                 "7.Verifica valabilitatea unei anumite carti (cartea trebuie sa existe)\n" +
                 "8.Verifica imprumuturile active ale unui cititor\n" +
-                "9.Returneaza o carte de catre un cititor\n" +
+                "9.Afiseaza toate persoanele din biblioteca(si autorii)\n" +
                 "10.Afiseaza informatii despre un anumit cititor sau angajat al bibliotecii";
         System.out.println("Bine ati venit in aplicatia bibliotecii noastre! Actiunile/interogarile pe care le puteti face:");
         System.out.println(actiuni);
@@ -93,20 +93,35 @@ public class Main {
 
                     break;
                 case 5:
+                    serviciuBiblioteca.afiseaza_sectiuni();
+                    System.out.println("Sectiunea dorita : ");
+                    int alegere;
+                    alegere = scanner.nextInt();
+                    scanner.nextLine();
+                    serviciuBiblioteca.afiseaza_carti_din_sectiune(alegere);
                     break;
                 case 6:
 
                     break;
                 case 7:
-
+                    String nume_carte;
+                    nume_carte = scanner.nextLine();
+                    serviciuBiblioteca.valabilitate_carte(nume_carte);
                     break;
                 case 8:
+                    System.out.println("Id cititor: ");
+                    String id_cit;
+                    id_cit = scanner.nextLine();
+
                     break;
                 case 9:
-
+                    serviciuBiblioteca.afisare_persoane();
                     break;
                 case 10:
-
+                    String nume_prenume;
+                    System.out.println("Numele persoanei pe care o cautati: ");
+                    nume_prenume = scanner.nextLine();
+                    serviciuBiblioteca.gasire_persoana(nume_prenume);
                     break;
             }
         }

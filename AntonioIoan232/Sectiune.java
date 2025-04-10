@@ -16,4 +16,11 @@ public class Sectiune {
     public void adauga_c(Carte carte){
         carti.add(carte);
     }
+    public void afiseaza_carti(){
+        int i = 0;
+        for(Carte c : carti){
+            System.out.println(Integer.toString(i) + "." + c.toString());
+            i++;
+        }
+    }
 }

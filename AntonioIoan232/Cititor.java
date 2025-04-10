@@ -11,4 +11,8 @@ public class Cititor extends Persoana {
         System.out.println("Cititorul : " + this.getNume() + " nascut in anul " + this.getData_nasterii() + " cu id-ul : " + id_citior);
 
     }
+
+    public String getId_citior() {
+        return id_citior;
+    }
 }
