@@ -13,7 +13,9 @@ public class Main {
                 "7.Verifica valabilitatea unei anumite carti (cartea trebuie sa existe)\n" +
                 "8.Verifica imprumuturile active ale unui cititor\n" +
                 "9.Afiseaza toate persoanele din biblioteca(si autorii)\n" +
-                "10.Afiseaza informatii despre un anumit cititor sau angajat al bibliotecii";
+                "10.Afiseaza informatii despre un anumit cititor sau angajat al bibliotecii\n"+
+                "11.Adaugare recenzii \n"+
+                "12.Vizualizare Recenzii";
         System.out.println("Bine ati venit in aplicatia bibliotecii noastre! Actiunile/interogarile pe care le puteti face:");
         System.out.println(actiuni);
 
@@ -132,6 +134,22 @@ public class Main {
                     nume_prenume = scanner.nextLine();
                     serviciuBiblioteca.gasire_persoana(nume_prenume);
                     break;
+                case 11:
+                    String continut;
+                    int ind, nota;
+                    System.out.println("Carti existente");
+                    serviciuBiblioteca.afiseazaCarti();
+                    System.out.println("Alegere: ");
+                    ind = scanner.nextInt();
+                    scanner.nextLine();
+                    System.out.println("Recenzie: ");
+                    continut = scanner.nextLine();
+                    System.out.println("Nota: ");
+                    nota = scanner.nextInt();
+                    scanner.nextLine();
+                    serviciuBiblioteca.adaugareRecenzie(ind,continut,nota);
+                case 12:
+                    serviciuBiblioteca.afiseazaRecenzii();
             }
         }
     }

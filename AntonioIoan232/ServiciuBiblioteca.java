@@ -5,6 +5,7 @@ public class ServiciuBiblioteca {
     private Set<Sectiune> sectii; //lista sortata pt Sectiuni alfabetic
     private List<Imprumuturi> imprumuturi;
     private List<Carte> carti;
+    private List<Recenzie> recenzii;
 
     public ServiciuBiblioteca() {
         persoane = new ArrayList<>();
@@ -14,6 +15,7 @@ public class ServiciuBiblioteca {
         sectii.add(new Sectiune("Sectiuni diverse"));
         imprumuturi = new ArrayList<>();
         carti = new ArrayList<>();
+        recenzii = new ArrayList<>();
     }
     //functie pt adaugarea persoanelor
     public void adauga_Persoana(int varianta, String nume, String prenume, int data_nasterii, String specificatie){
@@ -151,5 +153,24 @@ public class ServiciuBiblioteca {
             }
         }
         System.out.println("Eroare!");
+    }
+
+    public void adaugareRecenzie(int i, String continut, int nota){
+        recenzii.add(new Recenzie(carti.get(i),continut,nota));
+        System.out.println("Recenzie adaugata cu succes!");
+    }
+
+    public void afiseazaCarti(){
+        int i = 0;
+        for(Carte c : carti){
+            System.out.println(Integer.toString(i) + "." + c.toString());
+            i++;
+        }
+    }
+
+    public void afiseazaRecenzii(){
+        for(Recenzie r: recenzii){
+            System.out.println(r.toString());
+        }
     }
 }

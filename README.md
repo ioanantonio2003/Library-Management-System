@@ -13,4 +13,6 @@ Proiectul va avea clasa `ServiciuBiblioteca` care va putea:
 - ✅ Verifica **valabilitatea unei anumite carti** (cartea trebuie sa existe)  
 - 🔍 Verifica **imprumuturile active** ale unui cititor  
 - 🔁 **Returna o carte** de catre un cititor  
-- 👤 Afisa **informatii despre un anumit cititor sau angajat** al bibliotecii  
+- 👤 Afisa **informatii despre un anumit cititor sau angajat** al bibliotecii
+- ✅ Adauga si vizualiza **recenzii** pentru carti
+ 
