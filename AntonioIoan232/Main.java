@@ -1,7 +1,8 @@
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         //meniul interactiv al aplicatiei
         ServiciuBiblioteca serviciuBiblioteca = new ServiciuBiblioteca();
         String actiuni = "0.Inchidere aplicatie\n" + "1.Adauga o sectiune pentru carti in biblioteca\n" +
@@ -148,8 +149,10 @@ public class Main {
                     nota = scanner.nextInt();
                     scanner.nextLine();
                     serviciuBiblioteca.adaugareRecenzie(ind,continut,nota);
+                    break;
                 case 12:
                     serviciuBiblioteca.afiseazaRecenzii();
+                    break;
             }
         }
     }
