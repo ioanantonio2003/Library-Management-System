@@ -325,4 +325,40 @@ public class ServiciuBiblioteca {
             System.out.println(r.toString());
         }
     }
+
+    public void afiseazaRecenzii2(){
+        int i = 0;
+        for(Recenzie r: recenzii){
+            System.out.println(Integer.toString(i) + " " + r.toString());
+            i = i + 1;
+        }
+    }
+
+    public void stergereRecenzie(int i){
+        if (i < recenzii.size()) {
+            Recenzie recenzie = recenzii.get(i);
+
+            try {
+                Connection connection = DatabaseConnection.getConnection();
+
+                PreparedStatement ps = connection.prepareStatement(
+                        "DELETE FROM Recenzie WHERE titlu = ? AND continut = ? AND nota = ?"
+                );
+                ps.setString(1, recenzie.getTitlu());
+                ps.setString(2, recenzie.getContinut());
+                ps.setInt(3, recenzie.getNota());
+
+                ps.executeUpdate();
+
+                recenzii.remove(i);
+
+                ps.close();
+                connection.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else {
+            System.out.println("Index prea mare");
+        }
+    }
 }

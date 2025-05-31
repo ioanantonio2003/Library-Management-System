@@ -138,7 +138,7 @@ public class Main {
                 case 11:
                     String continut;
                     int ind, nota;
-                    System.out.println("Carti existente");
+                    System.out.println("Carti existente : ");
                     serviciuBiblioteca.afiseazaCarti();
                     System.out.println("Alegere: ");
                     ind = scanner.nextInt();
@@ -153,6 +153,13 @@ public class Main {
                 case 12:
                     serviciuBiblioteca.afiseazaRecenzii();
                     break;
+                case 13:
+                    System.out.println("Recenzii existente : ");
+                    serviciuBiblioteca.afiseazaRecenzii2();
+                    System.out.println("Alegere stergere : ");
+                    int a = scanner.nextInt();
+                    scanner.nextLine();
+                    serviciuBiblioteca.stergereRecenzie(a);
             }
         }
     }
