@@ -1,0 +1,34 @@
+CREATE TABLE Autor (
+    nume VARCHAR(100) NOT NULL,
+    prenume VARCHAR(100) NOT NULL,
+    data_nasterii INT,
+    tip_autor VARCHAR(100)
+);
+CREATE TABLE Angajat (
+    nume VARCHAR(100) NOT NULL,
+    prenume VARCHAR(100) NOT NULL,
+    data_nasterii INT,
+    tip_angajat VARCHAR(100)
+);
+CREATE TABLE Cititor (
+    id_cititor VARCHAR(50) PRIMARY KEY,
+    nume VARCHAR(100) NOT NULL,
+    prenume VARCHAR(100) NOT NULL,
+    data_nasterii INT
+);
+
+CREATE TABLE Carte (
+    nume_autor VARCHAR(200) NOT NULL,
+    titlu VARCHAR(200) NOT NULL,
+    an_publicatie INT,
+    nr_copii INT,
+    sectiune VARCHAR(100)
+);
+
+CREATE TABLE Recenzie (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    titlu VARCHAR(255),
+    continut TEXT,
+    nota INT
+);
+
