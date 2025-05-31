@@ -37,6 +37,7 @@ public class ServiciuBiblioteca {
                 persoane.add(autor);
             }
             rsAutori.close();
+            Audit.getAudit().actiune("s-au citit autorii");
 
             // PENTRU ANGAJATI
             ResultSet rsAngajati = statement.executeQuery(
@@ -52,6 +53,7 @@ public class ServiciuBiblioteca {
                 persoane.add(angajat);
             }
             rsAngajati.close();
+            Audit.getAudit().actiune("s-au citit angajatii");
 
             // PENTRU CITITORI
             ResultSet rsCititori = statement.executeQuery(
@@ -67,6 +69,7 @@ public class ServiciuBiblioteca {
                 persoane.add(cititor);
             }
             rsCititori.close();
+            Audit.getAudit().actiune("s-au citit cititorii");
 
             // PENTRU CARTI
             ResultSet rsCarti = statement.executeQuery(
@@ -99,6 +102,7 @@ public class ServiciuBiblioteca {
                 }
             }
             rsCarti.close();
+            Audit.getAudit().actiune("s-au citit cartile");
 
 
             //PENTRU RECENZII
@@ -148,7 +152,7 @@ public class ServiciuBiblioteca {
             pstmt.setString(3, prenume);
             pstmt.setInt(4, data_nasterii);
         }
-
+        Audit.getAudit().actiune("s-a adaugat o persoana in biblioteca");
 
        pstmt.executeUpdate();
 
@@ -231,6 +235,7 @@ public class ServiciuBiblioteca {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        Audit.getAudit().actiune("s-a adaugat o carte");
     }
 
     public void afisare_persoane(){
@@ -330,6 +335,7 @@ public class ServiciuBiblioteca {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        Audit.getAudit().actiune("s-a adaugat recenzie");
     }
 
     public void afiseazaCarti(){
@@ -380,5 +386,6 @@ public class ServiciuBiblioteca {
         } else {
             System.out.println("Index prea mare");
         }
+        Audit.getAudit().actiune("s-a sters o recenzie");
     }
 }
