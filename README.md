@@ -1,6 +1,6 @@
 # 📚 Proiect Java OOP – Biblioteca
 
-Proiect realizat care va gestiona anumite actiuni/interogari din cadrul unei biblioteci si care va salva datele intr-o baza de date folosind JDBC
+Proiect realizat care va gestiona anumite actiuni/interogari din cadrul unei biblioteci si care va salva datele intr-o baza de date(MySql, versiunea 8.0.4) folosind JDBC
 
 Proiectul va avea clasa `ServiciuBiblioteca` care va putea:
 
