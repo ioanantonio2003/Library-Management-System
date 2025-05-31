@@ -53,7 +53,7 @@ public class ServiciuBiblioteca {
             }
             rsAngajati.close();
 
-            // =PENTRU CITITORI
+            // PENTRU CITITORI
             ResultSet rsCititori = statement.executeQuery(
                     "SELECT id_cititor, nume, prenume, data_nasterii FROM Cititor"
             );
@@ -83,7 +83,7 @@ public class ServiciuBiblioteca {
                 Carte carte = new Carte(autorIndex, titlu, an, copii,numeSectiune);
                 carti.add(carte);
 
-                // adaugăm cartea în sectiunea specificată (dacă există)
+
                 boolean sectiuneGasita = false;
                 for (Sectiune s : sectii) {
                     if (s.getNume_sectiune().equalsIgnoreCase(numeSectiune)) {
@@ -212,6 +212,25 @@ public class ServiciuBiblioteca {
             }
         }
         System.out.println("Carte adaugata cu succes!");
+
+        try  {
+            Connection connection = DatabaseConnection.getConnection();
+            PreparedStatement ps = connection.prepareStatement(
+                    "INSERT INTO Carte (nume_autor, titlu, an_publicatie, nr_copii, sectiune) VALUES (?, ?, ?, ?, ?)"
+            );
+
+            ps.setString(1, persoane.get(i).getNume());
+            ps.setString(2, titlu);
+            ps.setInt(3, an);
+            ps.setInt(4, copii);
+            ps.setString(5, sect);
+
+            ps.executeUpdate();
+            ps.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public void afisare_persoane(){
@@ -280,6 +299,7 @@ public class ServiciuBiblioteca {
                             if(car.getNr_copii() > 0){
                                 imprumuturi.add(new Imprumuturi(car, (Cititor) persoana));
                                 System.out.println("Imprumut cu succes!");
+                                car.copii(-1);
                                 return;
                             }
                         }

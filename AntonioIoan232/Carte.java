@@ -23,9 +23,7 @@ public  class Carte {
                 '}';
     }
 
-    public String getSectiune() {
-        return sectiune;
-    }
+
 
     public int getNr_copii() {
         return nr_copii;

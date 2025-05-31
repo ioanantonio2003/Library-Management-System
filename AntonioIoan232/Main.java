@@ -16,7 +16,8 @@ public class Main {
                 "9.Afiseaza toate persoanele din biblioteca(si autorii)\n" +
                 "10.Afiseaza informatii despre un anumit cititor sau angajat al bibliotecii\n"+
                 "11.Adaugare recenzii \n"+
-                "12.Vizualizare Recenzii";
+                "12.Vizualizare Recenzii \n"+
+                "13.Stergere Recenzii";
         System.out.println("Bine ati venit in aplicatia bibliotecii noastre! Actiunile/interogarile pe care le puteti face:");
         System.out.println(actiuni);
 
