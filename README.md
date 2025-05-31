@@ -1,6 +1,6 @@
 # 📚 Proiect Java OOP – Biblioteca
 
-Proiectul realizat va gestiona anumite actiuni/interogari din cadrul unei biblioteci.
+Proiect realizat care va gestiona anumite actiuni/interogari din cadrul unei biblioteci si care va salva datele intr-o baza de date folosind JDBC
 
 Proiectul va avea clasa `ServiciuBiblioteca` care va putea:
 
@@ -15,4 +15,5 @@ Proiectul va avea clasa `ServiciuBiblioteca` care va putea:
 - 🔁 **Returna o carte** de catre un cititor  
 - 👤 Afisa **informatii despre un anumit cititor sau angajat** al bibliotecii
 - ✅ Adauga si vizualiza **recenzii** pentru carti
+- ❌ Sterge **recenziile** necorespunzatoare
  
